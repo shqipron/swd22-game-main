@@ -2,6 +2,7 @@ package at.compus02.swd.ss2022.game;
 
 import at.compus02.swd.ss2022.game.gameobjects.GameObject;
 import at.compus02.swd.ss2022.game.gameobjects.Player;
+import at.compus02.swd.ss2022.game.gameobjects.Sign;
 import at.compus02.swd.ss2022.game.input.GameInput;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
@@ -29,8 +30,8 @@ public class Main extends ApplicationAdapter {
 	@Override
 	public void create() {
 		batch = new SpriteBatch();
-		//gameObjects.add(new Sign());
-		gameObjects.add(new Player());
+		gameObjects.add(new Sign());
+		//gameObjects.add(new Player());
 		font = new BitmapFont();
 		font.setColor(Color.WHITE);
 		Gdx.input.setInputProcessor(this.gameInput);
@@ -48,7 +49,7 @@ public class Main extends ApplicationAdapter {
 		for(GameObject gameObject : gameObjects) {
 			gameObject.draw(batch);
 		}
-		font.draw(batch, "Hello Game", -220, -220);
+		font.draw(batch, "Hello Game CO-02", -220, -220);
 		batch.end();
 	}
 
