@@ -17,6 +17,8 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 public class Main extends ApplicationAdapter {
 	private SpriteBatch batch;
 
+	private Array<GameObject> gameObjects = new Array<>();
+
 	private ExtendViewport viewport = new ExtendViewport(480.0f, 480.0f, 480.0f, 480.0f);
 	private GameInput gameInput = new GameInput();
 

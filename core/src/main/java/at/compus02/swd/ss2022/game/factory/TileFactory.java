@@ -1,12 +1,24 @@
 package at.compus02.swd.ss2022.game.factory;
 
 import at.compus02.swd.ss2022.game.gameobjects.GameObject;
+import at.compus02.swd.ss2022.game.gameobjects.TileBase;
+import at.compus02.swd.ss2022.game.gameobjects.TileGras;
 import at.compus02.swd.ss2022.game.gameobjects.TileWater;
 
 public class TileFactory {
-    private String type;
+    public TileBase createWaterTile(){
 
-    public TileWater create(){
+        return new TileWater();
+    }
+    public TileBase createGrasTile(){
+
+        return new TileGras();
+    }
+    public TileBase createWallTile(){
+
+        return new TileWater();
+    }
+   /* public TileWater create(){
         return new TileWater();
     }
     public void initialize(){
@@ -14,5 +26,5 @@ public class TileFactory {
     }
     public GameObject[] getObjects() {
         return null;
-    }
+    }*/
 }

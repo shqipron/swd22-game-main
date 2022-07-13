@@ -25,4 +25,9 @@ public class Bush implements GameObject{
     public void draw(SpriteBatch batch) {
         sprite.draw(batch);
     }
+
+    @Override
+    public int getGameObjectOrder() {
+        return 0;
+    }
 }

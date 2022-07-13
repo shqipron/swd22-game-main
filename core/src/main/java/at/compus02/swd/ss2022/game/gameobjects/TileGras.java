@@ -4,8 +4,18 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class TileGras implements GameObject{
-    private Texture image;
+public class TileGras extends TileBase{
+
+    public TileGras(){
+        super("tile_gras.png", 32, 32);
+    }
+
+    @Override
+    public int getGameObjectOrder(){
+        return GameObjectOrder.GRAS;
+    }
+
+    /* private Texture image;
     private Sprite sprite;
     public TileGras(){
         image = new Texture("tile_gras.png");
@@ -24,5 +34,5 @@ public class TileGras implements GameObject{
     @Override
     public void draw(SpriteBatch batch) {
         sprite.draw(batch);
-    }
+    }*/
 }

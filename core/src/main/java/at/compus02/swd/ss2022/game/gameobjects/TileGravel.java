@@ -5,7 +5,26 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class TileGravel implements GameObject{
-    private Texture image;
+    @Override
+    public void act(float delta) {
+
+    }
+
+    @Override
+    public void setPosition(float x, float y) {
+
+    }
+
+    @Override
+    public void draw(SpriteBatch batch) {
+
+    }
+
+    @Override
+    public int getGameObjectOrder() {
+        return 0;
+    }
+   /* private Texture image;
     private Sprite sprite;
     public TileGravel(){
         image = new Texture("tile_gravel.png");
@@ -24,5 +43,5 @@ public class TileGravel implements GameObject{
     @Override
     public void draw(SpriteBatch batch) {
         sprite.draw(batch);
-    }
+    }*/
 }
