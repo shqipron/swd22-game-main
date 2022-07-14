@@ -33,8 +33,8 @@ public class MapFactory {
             for (int y = 0; y < mapImage.getHeight(); y += 10){
                 int px = mapImage.getPixel(x, y);
 
-                int posX = x / 10;
-                int posy = y / 10;
+                int posX = x / 100;
+                int posy = y / 100;
 
                 TileBase tile;
 
