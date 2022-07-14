@@ -28,6 +28,6 @@ public class Bush implements GameObject{
 
     @Override
     public int getGameObjectOrder() {
-        return 0;
+        return GameObjectOrder.BUSH;
     }
 }

@@ -1,5 +1,7 @@
 package at.compus02.swd.ss2022.game.gameobjects;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 public class TileWater extends TileBase{
 
     public TileWater(){
@@ -10,7 +12,7 @@ public class TileWater extends TileBase{
     public int getGameObjectOrder(){
         return GameObjectOrder.WATER;
     }
-   /* @Override
+    @Override
     public void act(float delta) {
 
     }
@@ -23,5 +25,5 @@ public class TileWater extends TileBase{
     @Override
     public void draw(SpriteBatch batch) {
         sprite.draw(batch);
-    }*/
+    }
 }

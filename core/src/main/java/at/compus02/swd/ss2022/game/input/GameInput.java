@@ -8,4 +8,6 @@ public class GameInput extends InputAdapter {
         System.out.println(keycode);
         return true;
     }
+
+
 }

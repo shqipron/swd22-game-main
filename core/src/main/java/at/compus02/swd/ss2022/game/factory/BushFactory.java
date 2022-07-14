@@ -10,10 +10,11 @@ public class BushFactory {
     public Bush create(){
         return new Bush();
     }
-    public void initialize(){
 
+    public GameObject create(float x, float y){
+        GameObject bush = create();
+        bush.setPosition(x, y);
+        return bush;
     }
-    public GameObject[] getObjects() {
-        return null;
-    }
+
 }

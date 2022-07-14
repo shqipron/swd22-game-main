@@ -35,4 +35,10 @@ public class AssetRepository {
 
     }
 
+    public void dispose(){
+        for (Texture value : textures.values()){
+            value.dispose();
+        }
+    }
+
 }

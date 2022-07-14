@@ -1,13 +1,14 @@
 package at.compus02.swd.ss2022.game;
 
-import at.compus02.swd.ss2022.game.gameobjects.GameObject;
-import at.compus02.swd.ss2022.game.gameobjects.Player;
-import at.compus02.swd.ss2022.game.gameobjects.Sign;
+import at.compus02.swd.ss2022.game.factory.MapFactory;
+import at.compus02.swd.ss2022.game.gameobjects.*;
 import at.compus02.swd.ss2022.game.input.GameInput;
+import at.compus02.swd.ss2022.game.movementstrategy.EnemyLogic;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
@@ -19,10 +20,12 @@ public class Main extends ApplicationAdapter {
 
 	private Array<GameObject> gameObjects = new Array<>();
 
-	private ExtendViewport viewport = new ExtendViewport(480.0f, 480.0f, 480.0f, 480.0f);
+	private OrthographicCamera camera = new OrthographicCamera();
+
+	private ExtendViewport viewport = new ExtendViewport(480.0f, 480.0f, camera);
 	private GameInput gameInput = new GameInput();
 
-	private Array<GameObject> gameObjects = new Array<>();
+	private EnemyLogic enemyLogic = new EnemyLogic(gameObjects);
 
 	private final float updatesPerSecond = 60;
 	private final float logicFrameTime = 1 / updatesPerSecond;
@@ -31,12 +34,17 @@ public class Main extends ApplicationAdapter {
 
 	@Override
 	public void create() {
-		batch = new SpriteBatch();
-		gameObjects.add(new Sign());
-		//gameObjects.add(new Player());
-		font = new BitmapFont();
-		font.setColor(Color.WHITE);
+
+		/*gameObjects.add(new Sign());
+		gameObjects.add(new TileWater());
+		gameObjects.add(new Player());
+		font = new BitmapFont();*/
+		//font.setColor(Color.WHITE);
 		Gdx.input.setInputProcessor(this.gameInput);
+		batch = new SpriteBatch();
+
+		MapFactory mapFactory = new MapFactory();
+		mapFactory.createMap(gameObjects,gameInput,camera,enemyLogic);
 	}
 
 	private void act(float delta) {
@@ -46,17 +54,19 @@ public class Main extends ApplicationAdapter {
 	}
 
 	private void draw() {
+		gameObjects.sort(new GameObjectDraw());
 		batch.setProjectionMatrix(viewport.getCamera().combined);
 		batch.begin();
 		for(GameObject gameObject : gameObjects) {
 			gameObject.draw(batch);
 		}
-		font.draw(batch, "Hello Game CO-02", -220, -220);
+		//font.draw(batch, "Hello Game CO-02", -220, -220);
 		batch.end();
 	}
 
 	@Override
 	public void render() {
+
 		Gdx.gl.glClearColor(0.15f, 0.15f, 0.2f, 1f);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
