@@ -15,13 +15,14 @@ public class MapFactory {
 
         final int colWater = 0x099cffff;
         final int colGras = 0x097b19ff;
-        final int colLava = 0x661b0aff;
+        final int colStone = 0x661b0aff;
         final int colBush = 0x0fff26ff;
         final int colWall = 0x464646ff;
 
 
         TileFactory tileFactory = new TileFactory();
         BushFactory bushFactory = new BushFactory();
+        StoneFactory stoneFactory = new StoneFactory();
         EnemyFactory enemyFactory = new EnemyFactory();
         PlayerFactory playerFactory = new PlayerFactory();
 
@@ -49,6 +50,10 @@ public class MapFactory {
                     case colWall:
                         tile = tileFactory.createWallTile();
                         break;
+                    /*case colStone:
+                        tile = tileFactory.createGrasTile();
+                        gameObjectsList.add(StoneFactory.create(posX * tile.getWidth(), posy * tile.getHeight()));
+                        break;*/
                     case colBush:
                         tile = tileFactory.createGrasTile();
                         gameObjectsList.add(bushFactory.create(posX * tile.getWidth(), posy * tile.getHeight()));

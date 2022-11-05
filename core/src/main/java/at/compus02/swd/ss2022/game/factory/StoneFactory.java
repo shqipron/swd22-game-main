@@ -10,10 +10,9 @@ public class StoneFactory {
     public Stone create(){
         return new Stone();
     }
-    public void initialize(){
-
-    }
-    public GameObject[] getObjects() {
-        return null;
+    public GameObject create(float x, float y){
+        GameObject stone = create();
+        stone.setPosition(x+10, y+10);
+        return stone;
     }
 }

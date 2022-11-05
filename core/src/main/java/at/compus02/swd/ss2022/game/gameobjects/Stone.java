@@ -8,7 +8,7 @@ public class Stone implements GameObject{
     private Texture image;
     private Sprite sprite;
     public Stone(){
-        image = new Texture("bush.png");
+        image = new Texture("stone.png");
         sprite = new Sprite(image);
     }
     @Override
@@ -28,6 +28,6 @@ public class Stone implements GameObject{
 
     @Override
     public int getGameObjectOrder() {
-        return 0;
+        return GameObjectOrder.STONE;
     }
 }

@@ -30,7 +30,7 @@ public abstract class TileBase implements GameObject {
 
     @Override
     public void setPosition(float x, float y){
-        sprite.setPosition(x, y);
+        sprite.setPosition(x , y);
     }
 
     @Override

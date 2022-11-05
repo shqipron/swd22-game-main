@@ -15,10 +15,6 @@ public class TileFactory {
 
         return new TileWater();
     }
-    public TileBase createLavaTile(){
-
-        return new TileLava();
-    }
    /* public TileWater create(){
         return new TileWater();
     }
