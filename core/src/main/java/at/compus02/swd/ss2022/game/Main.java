@@ -44,7 +44,11 @@ public class Main extends ApplicationAdapter {
 		batch = new SpriteBatch();
 
 		MapFactory mapFactory = new MapFactory();
-		mapFactory.createMap(gameObjects,gameInput,camera,enemyLogic);
+		mapFactory.createMap(
+				gameObjects,
+				gameInput,
+				camera,
+				enemyLogic);
 	}
 
 	private void act(float delta) {
@@ -57,10 +61,11 @@ public class Main extends ApplicationAdapter {
 		gameObjects.sort(new GameObjectDraw());
 		batch.setProjectionMatrix(viewport.getCamera().combined);
 		batch.begin();
+//		font.draw(batch, "Hello Game CO-02", -220, -220);
 		for(GameObject gameObject : gameObjects) {
 			gameObject.draw(batch);
 		}
-		//font.draw(batch, "Hello Game CO-02", -220, -220);
+
 		batch.end();
 	}
 

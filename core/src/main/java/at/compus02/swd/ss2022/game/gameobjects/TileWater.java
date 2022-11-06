@@ -5,16 +5,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class TileWater extends TileBase{
 
     public TileWater(){
-        super("tile_water.png", 32, 32);
+        super(TilesPath.WATER, 32, 32);
     }
 
     @Override
     public int getGameObjectOrder(){
-        return GameObjectOrder.WATER;
-    }
-    @Override
-    public void act(float delta) {
 
+        return GameObjectOrder.WATER;
     }
 
     @Override

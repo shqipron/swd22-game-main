@@ -1,27 +1,20 @@
 package at.compus02.swd.ss2022.game.factory;
 
+import at.compus02.swd.ss2022.game.gameobjects.TilesEnum;
 import at.compus02.swd.ss2022.game.gameobjects.*;
 
 public class TileFactory {
-    public TileBase createWaterTile(){
-
-        return new TileWater();
+    public TileBase create(TilesEnum tile){
+        switch (tile) {
+            default:
+            case GRAS:
+                return new TileGras();
+            case LAVA:
+                return new TileLava();
+            case WALL:
+                return new TileWall(true);
+            case WATER:
+                return new TileWater();
+        }
     }
-    public TileBase createGrasTile(){
-
-        return new TileGras();
-    }
-    public TileBase createWallTile(){
-
-        return new TileWater();
-    }
-   /* public TileWater create(){
-        return new TileWater();
-    }
-    public void initialize(){
-
-    }
-    public GameObject[] getObjects() {
-        return null;
-    }*/
 }
